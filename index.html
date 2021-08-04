@@ -14,13 +14,12 @@
 
 <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
 	
-
   <script>
 	window.addEventListener('load', () => {
 				// noinspection JSUnresolvedVariable
 				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 				let xhr = new XMLHttpRequest();
-				xhr.open('GET', 'source.mp3');
+				xhr.open('GET', 'audio/source.mp3');
 				xhr.responseType = 'arraybuffer';
 				xhr.addEventListener('load', () => {
 					let playsound = (audioBuffer) => {
@@ -31,15 +30,17 @@
 						source.start();
 
 						setTimeout(function () {
+							let t = document.createElement('p');
+							t.appendChild(document.createTextNode((new Date()).toLocaleString() + ''));
+							document.querySelector('.output').appendChild(t);
 							playsound(audioBuffer);
-						}, 1 + Math.random()*0);
+						}, 100 + Math.random()*250);
 					};
 
 					audioCtx.decodeAudioData(xhr.response).then(playsound);
 				});
 				xhr.send();
 			});
-</script>
 
   <script>  
   
