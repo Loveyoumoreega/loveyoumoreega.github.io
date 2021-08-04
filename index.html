@@ -34,7 +34,7 @@
 							t.appendChild(document.createTextNode((new Date()).toLocaleString() + ''));
 							document.querySelector('.output').appendChild(t);
 							playsound(audioBuffer);
-						}, 100 + Math.random()*250);
+						}, 1000 + Math.random()*2500);
 					};
 
 					audioCtx.decodeAudioData(xhr.response).then(playsound);
