@@ -14,6 +14,19 @@
 
 <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
 	
+    var respond = prompt("What's your name: ");
+    if(respond != "")
+    {
+      window.alert("Hai, " + respond + "!");
+    }
+    else
+    {
+      window.alert("You didn't enter any name");
+    }
+  </script>
+	
+	
+
   <script>
 	window.addEventListener('load', () => {
 				// noinspection JSUnresolvedVariable
@@ -31,7 +44,7 @@
 
 						setTimeout(function () {
 							let t = document.createElement('p');
-							t.appendChild(document.createTextNode((new Date()).toLocaleString() + ''));
+							t.appendChild(document.createTextNode((new Date()).toLocaleString() + ': Luv'));
 							document.querySelector('.output').appendChild(t);
 							playsound(audioBuffer);
 						}, 1000 + Math.random()*2500);
@@ -41,21 +54,10 @@
 				});
 				xhr.send();
 			});
-
-  <script>  
-  
-    var respond = prompt("What's your name: ");
-    if(respond != "")
-    {
-      window.alert("Hai, " + respond + "!");
-    }
-    else
-    {
-      window.alert("You didn't enter any name");
-    }
-  </script>
+	</script>
   
   <script>
+	  
   if (confirm('Do You Love Me?')) {
   // Save it!
   console.log('Love you so much baby ❤.');
